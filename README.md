@@ -13,5 +13,5 @@ You have to guess the hidden word in 5 tries and the color of the letters change
 To start the game, just enter any word, for example:
 
 <p align="center">
-    ![image](https://user-images.githubusercontent.com/71513188/196002442-4800fb3c-82dc-4518-aba3-c5915d7e3063.png)
+    <img src="https://user-images.githubusercontent.com/71513188/196002483-c7439458-49f5-4d36-a908-2ede9c33eea9.png"/>
 </p>
