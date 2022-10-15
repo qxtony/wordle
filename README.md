@@ -20,6 +20,6 @@ To start the game, just enter any word, for example:
 ## Installation
 ```bash
 git clone https://github.com/qxtony/wordle.git
-cd wordle
+cd wordle/wordle/gui
 python3 app.py
 ```
