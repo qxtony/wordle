@@ -15,3 +15,11 @@ To start the game, just enter any word, for example:
 <p align="center">
     <img src="https://user-images.githubusercontent.com/71513188/196002483-c7439458-49f5-4d36-a908-2ede9c33eea9.png"/>
 </p>
+
+
+## Installation
+```bash
+git clone https://github.com/qxtony/wordle.git
+cd wordle
+python3 app.py
+```
