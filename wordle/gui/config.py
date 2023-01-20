@@ -1,9 +1,13 @@
-WIDTH, HEIGHT = 700, 700
-TITLE = "PyWordle"
-COUNT_OF_FIELDS_LINE = 5
-COUNT_OF_LINES = 5
-COUNT_FIELDS: int = 25
+from typing import Final
 
-FONT_COLOR = (57, 62, 76, 255)
-ERROR_COLOR = (255, 100, 100, 255)
-WIN_OR_LOSS_COLOR = (89, 108, 104, 255)
+
+WIDTH: Final[int] = 700
+HEIGHT: Final[int] = 700
+TITLE: Final[str] = "PyWordle"
+COUNT_OF_FIELDS_LINE: Final[int] = 5
+COUNT_OF_LINES: Final[int] = 5
+COUNT_FIELDS: Final[int] = 25
+
+FONT_COLOR: Final[tuple] = (57, 62, 76, 255)  # RGBA
+ERROR_COLOR: Final[tuple] = (255, 100, 100, 255)  # RGBA
+WIN_OR_LOSS_COLOR: Final[tuple] = (89, 108, 104, 255)  # RGBA
