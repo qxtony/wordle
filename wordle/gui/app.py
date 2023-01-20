@@ -1,4 +1,4 @@
-from typing import Dict, Literal, NoReturn, Optional, Tuple, Union
+from typing import Dict, Literal, Optional, Tuple, Union
 
 from pyglet import app, clock, text, window
 
@@ -22,7 +22,7 @@ from logic import (
 from screen_properties import Field, ScreenResource
 
 
-class Wordle(window.Window):  # type: ignore
+class Wordle(window.Window):
     def __init__(self) -> None:
         super(Wordle, self).__init__(WIDTH, HEIGHT, TITLE)
 
@@ -36,8 +36,9 @@ class Wordle(window.Window):  # type: ignore
         self.count_occupied_fields = 0
         self.count_guessed_words = 0
         self.is_enter_active = False
+        self.is_draw_notification = False
 
-    def on_draw(self) -> NoReturn:
+    def on_draw(self) -> None:
         self.clear()
         self.resources.background.blit(0, 0)
         self.resources.keyboard.blit(25, 50)
@@ -53,13 +54,17 @@ class Wordle(window.Window):  # type: ignore
         if self.resources.notification:
             self.resources.blurry_background.blit(0, 0)
             self.resources.notification.draw()
-            self.clear_error()
+            self.is_draw_notification = True
 
     def on_key_press(self, key: int, _: int) -> Optional[bool]:
         converted_letter: Union[str, Literal[False]] = change_layout(key)
 
         if not converted_letter:
             return False
+
+        if self.is_draw_notification:
+            self.clear_error()
+            self.is_draw_notification = False
 
         permission_to_draw: Union[str, bool] = self.get_permission_to_draw(
             converted_letter
@@ -116,8 +121,10 @@ class Wordle(window.Window):  # type: ignore
             self.count_occupied_fields += 1
 
     def write_text_on_center_screen(
-        self, message: str, color: Tuple[int, int, int, int], font_size: int = 50
-    ) -> NoReturn:
+        self,
+        message: str, color: Tuple[int, int, int, int],
+        font_size: int = 50
+    ) -> None:
         self.resources.notification = text.Label(
             text=message,
             font_name="Open Sans",
