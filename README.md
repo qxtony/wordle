@@ -21,5 +21,6 @@ To start the game, just enter any word, for example:
 ```bash
 git clone https://github.com/qxtony/wordle.git
 cd wordle/wordle/gui
+pip install -r requirements.txt
 python3 app.py
 ```
